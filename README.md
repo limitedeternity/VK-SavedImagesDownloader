@@ -15,3 +15,6 @@ Run `python3 main.py` and login with your VK data.
 **Note:** Since January 2017, **Saved Pictures Album** requires permissions to be accessed to. 
 
 The script will create a `<your_first_name>_<your_last_name>` directory and download all your saved pictures there.
+
+
+If you have any ideas/issues about improvid this script, I would gladly take them into account! [Issues](https://github.com/jonsnow123kappa/vk-savehouse/issues)
