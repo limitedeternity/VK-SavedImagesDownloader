@@ -4,6 +4,8 @@
 ###### About
 You have a lot of great pictures that you have been saving for years? Back them up on your hard drive!
 
+This script can be really useful for those who have a lot of pictures that need to be saved.
+
 ###### Requirements
 - **Python 3.5**
 
