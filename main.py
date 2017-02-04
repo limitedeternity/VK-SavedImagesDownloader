@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Author: jonsnow123kappa
+# e-mail: johnny.uncaught@gmail.com
+
 import vk
 import urllib.request
 from multiprocessing import Pool
