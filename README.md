@@ -7,7 +7,7 @@ You have a lot of great pictures that you have been saving for years? Back them 
 This script can be really useful for those who have a lot of pictures that need to be saved.
 
 ## Requirements
-- **Python 3.5**
+- **Python 3**
 
 - **vk Python library** - `sudo pip3 install vk` to get it
 
