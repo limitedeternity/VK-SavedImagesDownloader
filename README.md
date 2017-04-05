@@ -17,4 +17,5 @@ If you have any ideas/issues about improving this script, I would gladly take th
 
 ## FAQ
 **Q:** Why do I have to login to download photos?
+
 **A:** Since January 2017, **Saved Pictures Album** requires permissions to be accessed to.
