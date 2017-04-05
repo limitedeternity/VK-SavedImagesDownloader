@@ -1,22 +1,20 @@
 # vk-savehouse
-###### Asynchronous VK "Saved Photos" Album downloader
-
-## About
-You have a lot of great pictures that you have been saving for years? Back them up on your hard drive!
-
-This script can be really useful for those who have a lot of pictures that need to be saved.
-
-## Requirements
-- **Python 3**
-
-- **vk Python library** - `sudo pip3 install vk` to get it
+## Introduction
+This script allows you to download your whole [VK](https://vk.com) saved album. It will create a folder `{your_first_name}_{your_last_name}` and store all the pictures there.
 
 ## Usage
-Run `python3 main.py` and login with your VK data. 
+#### Requirements
+* **Python 3**
+* **vk Python library** - `pip install vk`
 
-**Note:** Since January 2017, **Saved Pictures Album** requires permissions to be accessed to. 
+#### To use the script do the following:
+1. Clone this repository.
+2. Enter the repository directory
+3. Run the script - `python main.py`
 
-The script will create a `<your_first_name>_<your_last_name>` directory and download all your saved pictures there.
-
-###### Issues
+## Issues
 If you have any ideas/issues about improving this script, I would gladly take them into account! [Issues](https://github.com/jonsnow123kappa/vk-savehouse/issues)
+
+## FAQ
+**Q:** Why do I have to login to download photos?
+**A:** Since January 2017, **Saved Pictures Album** requires permissions to be accessed to.
