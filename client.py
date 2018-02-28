@@ -1,5 +1,6 @@
-import vk
 import math
+
+import vk
 
 
 class User(object):

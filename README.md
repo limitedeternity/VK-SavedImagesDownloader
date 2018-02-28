@@ -6,6 +6,7 @@ This script allows you to download your whole [VK](https://vk.com) saved album. 
 #### Requirements
 * **Python 3**
 * **vk Python library** - `pip install vk`
+* **requests Python library** - `pip install requests requests[security]`
 
 #### To use the script do the following:
 1. Clone this repository.
@@ -14,8 +15,3 @@ This script allows you to download your whole [VK](https://vk.com) saved album. 
 
 ## Issues
 If you have any ideas/issues about improving this script, I would gladly take them into account! [Issues](https://github.com/jonsnow123kappa/vk-savehouse/issues)
-
-## FAQ
-**Q:** Why do I have to login to download photos?
-
-**A:** Since January 2017, **Saved Pictures Album** requires permissions to be accessed to.
