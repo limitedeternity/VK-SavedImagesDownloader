@@ -1,4 +1,5 @@
 import vk
+import math
 
 
 class User(object):
@@ -17,13 +18,15 @@ class User(object):
     def get_photos(self, api):
         '''Get list of saved photos URL's.'''
 
-        saved_photos = api.photos.get(album_id="saved")
-        photos_urls = list()
-        for photo in saved_photos:
-            for key, value in photo.items():
-                if (key == "src_big"):
-                    photos_urls.append(value)
-        print("You've got {} saved photos!".format(len(photos_urls)))
+        photos_count = api.photos.getAlbums(album_ids=-15)[0]['size']
+        photos_urls = []
+
+        for i in range(math.ceil(photos_count / 1000)):
+            saved_photos = api.photos.get(album_id="saved", count=1000, offset=i*1000)
+            for photo in saved_photos:
+                photos_urls.append(photo["src_big"])
+
+        print("You've got {} saved photos!".format(photos_count))
         return photos_urls
 
     def get_credentials(self, api):
