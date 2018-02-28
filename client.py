@@ -4,15 +4,13 @@ import vk
 class User(object):
     '''VK user class.'''
 
-    def __init__(self, login, password):
-        self.login = login
-        self.password = password
+    def __init__(self, token):
+        self.access_token = token
 
     def auth(self):
         '''Authorizating user with access to photos.'''
 
-        session = vk.AuthSession(app_id="5606767", user_login=self.login,
-                                 user_password=self.password, scope="photos")
+        session = vk.Session(access_token=self.access_token)
         api = vk.API(session)
         return api
 

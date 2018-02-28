@@ -4,8 +4,8 @@ import os
 import requests
 import shutil
 import functools
+import webbrowser
 import time
-import getpass
 
 
 def create_folder(credentials):
@@ -33,10 +33,10 @@ def photos_downloader(url, folder_name):
 
 
 if __name__ == '__main__':
-    user_login = input("Enter your login: ")
-    user_password = getpass.getpass("Enter your password: ")
+    webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6044739&redirect_uri=https://oauth.vk.com/blank.html&response_type=token&scope=84')
+    access_token = input("Token: ")
     try:
-        user = User(login=user_login, password=user_password)
+        user = User(token=access_token)
         vk_api = user.auth()
         print("Authorization successful.")
     except Exception:
