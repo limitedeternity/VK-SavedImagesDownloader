@@ -60,7 +60,7 @@ if __name__ == '__main__':
         folder = create_folder(creds)
         urls = user.get_photos(vk_api)
 
-        p = Pool()
+        p = Pool(5)
         p.map(functools.partial(photos_downloader, folder_name=folder), urls)
 
     except Exception as e:
