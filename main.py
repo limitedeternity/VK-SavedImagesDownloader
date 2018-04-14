@@ -43,7 +43,7 @@ def photos_downloader(url, folder_name):
 
 if __name__ == '__main__':
     webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6044739&redirect_uri=https://oauth.vk.com/blank.html&response_type=token&scope=84')
-    access_token = input("Token: ")
+    access_token = input("Place data from access_token param here: ")
 
     try:
         user = User(token=access_token)
@@ -60,7 +60,7 @@ if __name__ == '__main__':
         folder = create_folder(creds)
         urls = user.get_photos(vk_api)
 
-        p = Pool(5)
+        p = Pool()
         p.map(functools.partial(photos_downloader, folder_name=folder), urls)
 
     except Exception as e:

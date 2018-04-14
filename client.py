@@ -13,21 +13,27 @@ class User(object):
         '''Authorizating user with access to photos.'''
 
         session = vk.Session(access_token=self.access_token)
-        api = vk.API(session)
+        api = vk.API(session, v='5.74')
         return api
 
     def get_photos(self, api):
         '''Get list of saved photos URL's.'''
 
-        photos_count = api.photos.getAlbums(album_ids=-15)[0]['size']
+        albums = api.photos.getAlbums(need_system=1)["items"]
+        saved_photos = [x for x in albums if x["id"] == -15][0]
+        photos_count = saved_photos["size"]
+
+        print("You've got {} saved photos!".format(photos_count))
         photos_urls = []
 
         for i in range(math.ceil(photos_count / 1000)):
             saved_photos = api.photos.get(album_id="saved", count=1000, offset=i*1000)
-            for photo in saved_photos:
-                photos_urls.append(photo["src_big"])
+            for photo in saved_photos["items"]:
+                photo_resolutions = [(key, value) for key, value in photo.items() if key.startswith("photo_")]
+                photo_resolutions.sort()
 
-        print("You've got {} saved photos!".format(photos_count))
+                photos_urls.append(photo_resolutions[-1][1])
+
         return photos_urls
 
     def get_credentials(self, api):
