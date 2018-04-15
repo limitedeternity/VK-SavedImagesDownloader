@@ -42,7 +42,7 @@ def photos_downloader(url, folder_name):
 
 
 if __name__ == '__main__':
-    webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6044739&redirect_uri=https://oauth.vk.com/blank.html&response_type=token&scope=84')
+    webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6044739&response_type=token&scope=84&redirect_uri=https://limitedeternity.github.io/VK-SavedImagesDownloader/')
     access_token = input("Place data from access_token param here: ")
 
     try:
@@ -53,6 +53,10 @@ if __name__ == '__main__':
     except Exception:
         print("Your input data seems to be wrong. Please try again!")
         sys.exit(1)
+    
+    except KeyboardInterrupt:
+        print("Keyboard interrupt detected!")
+        sys.exit(0)
 
     try:
         start_time = time.time()
