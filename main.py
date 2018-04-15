@@ -42,7 +42,7 @@ def photos_downloader(url, folder_name):
 
 
 if __name__ == '__main__':
-    webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6449285&response_type=token&scope=84&redirect_uri=https://limitedeternity.github.io/VK-SavedImagesDownloader/')
+    webbrowser.open_new_tab('https://oauth.vk.com/authorize?client_id=6449285&response_type=token&scope=photo&redirect_uri=https://limitedeternity.github.io/VK-SavedImagesDownloader/')
 
     try:
         access_token = input("Place data from access_token param here: ")
