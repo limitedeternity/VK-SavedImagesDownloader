@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Stub</title>
+    <script src="https://unpkg.com/when-dom-ready"></script>
+    <script>
+    whenDomReady().then(() => {
+        document.getElementById("tokenOut").value = location.href.match(new RegExp('access_token=(.*)&expires_in='))[1];
+    });
+    </script>
+</head>
+<body>
+    <p>Скопируйте следующую строку в консоль: </p>
+    <input id="tokenOut" readonly value="" style="width:50%">
+</body>
+</html>
