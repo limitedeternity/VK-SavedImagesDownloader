@@ -29,9 +29,7 @@ class User(object):
         for i in range(math.ceil(photos_count / 1000)):
             saved_photos = api.photos.get(album_id="saved", count=1000, offset=i*1000)
             for photo in saved_photos["items"]:
-                photo_resolutions = [(key, value) for key, value in photo.items() if key.startswith("photo_")]
-                photo_resolutions.sort()
-
+                photo_resolutions = sorted([(key, value) for key, value in photo.items() if key.startswith("photo_")])
                 photos_urls.append(photo_resolutions[-1][1])
 
         return photos_urls
