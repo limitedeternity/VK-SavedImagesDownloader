@@ -82,4 +82,4 @@ if __name__ == '__main__':
         shutil.make_archive(folder, 'zip', folder)
         shutil.rmtree(folder)
 
-        print("---Done in {0:.2f} seconds ---".format(time.time() - start_time))
+        print("--- Done in {0:.2f} seconds ---".format(time.time() - start_time))
