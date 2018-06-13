@@ -36,7 +36,7 @@ def photos_downloader(url, folder_name):
             r.raw.decode_content = True
             shutil.copyfileobj(r.raw, f)
             print("{} downloaded.".format(file_name))
-    
+
     else:
         print("{} skipped.".format(file_name))
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     except Exception:
         print("Your input data seems to be wrong. Please try again!")
         sys.exit(1)
-    
+
     except KeyboardInterrupt:
         print("Keyboard interrupt detected!")
         sys.exit(0)
@@ -66,6 +66,8 @@ if __name__ == '__main__':
 
         p = Pool()
         p.map(functools.partial(photos_downloader, folder_name=folder), urls)
+        p.close()
+        p.join()
 
     except Exception as e:
         print(e)
@@ -74,6 +76,10 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("Keyboard interrupt detected!")
         sys.exit(0)
-            
+
     finally:
-        print("---Done in {} seconds ---".format(time.time() - start_time))
+        print("Zipping folder...")
+        shutil.make_archive(folder, 'zip', folder)
+        shutil.rmtree(folder)
+
+        print("---Done in {0:.2f} seconds ---".format(time.time() - start_time))
