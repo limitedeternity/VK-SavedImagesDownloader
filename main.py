@@ -9,6 +9,7 @@ from multiprocessing import Pool
 import requests
 
 from client import User
+from zip import zip_contents
 
 
 def create_folder(credentials):
@@ -79,7 +80,7 @@ if __name__ == '__main__':
 
     finally:
         print("Zipping folder...")
-        shutil.make_archive(folder, 'zip', folder)
+        zip_contents(folder)
         shutil.rmtree(folder)
 
         print("--- Done in {0:.2f} seconds ---".format(time.time() - start_time))
